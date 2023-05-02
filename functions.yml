@@ -1,0 +1,12 @@
+chat:
+  handler: handler.chat_handler
+  description: Chat with a character
+  timeout: 30
+  environment:
+    OPENAI_API_KEY: ${env:OPENAI_API_KEY}
+    OPENAI_MODEL: ${env:OPENAI_MODEL}
+  events:
+    - http:
+        path: chat
+        method: post
+        # cors: true
